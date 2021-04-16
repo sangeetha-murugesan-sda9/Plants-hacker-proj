@@ -3,6 +3,7 @@ package se.kth.sda.skeleton.posts;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.kth.sda.skeleton.comments.Comment;
+import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,8 +18,9 @@ public class Post {
 
     @Column(nullable = false)
     private String body;
-    @Column(nullable = false)
-    private String email;
+
+    @ManyToOne
+    private User user;
 
     @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
     public List<Comment> comments = new ArrayList<>();
@@ -49,11 +51,11 @@ public class Post {
         this.comments = comments;
     }
 
-    public String getEmail() {
-        return email;
+   public User getUser() {
+        return user;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
