@@ -10,7 +10,7 @@ class PostsApi {
     }
 
     createPost(post) {
-        return Api.post('/posts', post);
+        return Api.post('/post', post);
     }
 
     updatePost(post) {
