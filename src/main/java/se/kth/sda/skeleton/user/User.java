@@ -21,8 +21,8 @@ public class User {
 @Column(name = "email", unique = true)
     private String email;
 
-    @OneToMany
-    private List<Post> posts;
+   /* @OneToMany
+    private List<Post> posts;*/
 
     @Length(min = 5, max=100, message = "Password length most be between 5-100 characters")
  @Column(name = "password")
@@ -74,11 +74,11 @@ public class User {
         this.name = name;
     }
 
-  public List<Post> getPosts() {
+  /*public List<Post> getPosts() {
         return posts;
     }
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
-    }
+    }*/
 }

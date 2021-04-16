@@ -79,7 +79,6 @@ export default function PostsPage() {
 
   return (
     <div>
-    <!--  <Form onSubmit={(postData) => createPost(postData) + addEmail(email)} />-->
        <Form onSubmit={(postData) => createPost(postData)} />
       <CommentForm onSubmit={(CommentData) => createComment(CommentData)} />
       {CardsArray}

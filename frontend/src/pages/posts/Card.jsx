@@ -5,7 +5,6 @@ export default function PostCard({ post, onDeleteClick,email }) {
     <div className="card mt-3">
       <div className="card-body">
         <p>{post.body}</p>
-          <p>{post.email}</p>
 
         <button className="btn btn-danger" onClick={onDeleteClick}>
           Delete
