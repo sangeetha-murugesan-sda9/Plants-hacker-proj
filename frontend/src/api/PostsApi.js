@@ -19,7 +19,16 @@ class PostsApi {
 
     deletePost(id) {
         return Api.delete('/posts/'+id);
-    } 
+    }
+
+    /* addEmail(id) {
+        return Api.post('/posts/'+ id);
+    }
+
+    getEmailByPostId(id){
+        return Api.get('/posts/email/' + id )
+    }*/
+
 }
 
 export default new PostsApi();

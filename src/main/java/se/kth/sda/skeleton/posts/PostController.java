@@ -60,6 +60,13 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
 
+//    @GetMapping("/posts/email")
+//    public ResponseEntity<Post> getEmail(@RequestBody Post email) {
+//
+//        postRepository.save(email);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(email);
+//    }
+
 }
 
 

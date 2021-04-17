@@ -9,7 +9,7 @@ class CommentApi {
         return Api.get('/comments/'+id);
     }
 
-    createComments(post) {
+    createComment(post) {
         return Api.post('/comments', post);
     }
 
@@ -17,9 +17,13 @@ class CommentApi {
         return Api.put('/comments', post);
     }
 
-    deleteComments(id) {
+    deleteComment(id) {
         return Api.delete('/comments/'+id);
     }
+
+   /* addEmail(email) {
+        return Api.delete('/comments/'+ email);
+    }*/
 }
 
 export default new CommentApi();

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PostCard({ post, onDeleteClick }) {
+export default function PostCard({ post, onDeleteClick,email }) {
   return (
     <div className="card mt-3">
       <div className="card-body">
