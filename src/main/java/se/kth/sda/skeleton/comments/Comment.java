@@ -16,15 +16,12 @@ public class Comment {
 
     @Column(nullable = false)
     private String body;
-    @Column(nullable = false)
-    private String email;
+
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
     private Post posts;
-
-
 
 
     public void setId (Long id) {
@@ -53,11 +50,5 @@ public class Comment {
         this.posts = posts;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
