@@ -40,12 +40,10 @@ public class CommentController {
             return  ResponseEntity.ok(comments);
         }
         @GetMapping("/posts/{postsId}/comments")
-        public ResponseEntity<List<Comment >>  getAllCommentsToParticularArticle(@PathVariable Long postsId  )  {
+        public ResponseEntity<List<Comment >>  getAllCommentsToParticularPost(@PathVariable Long postsId  )  {
             Post posts = postRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
             return ResponseEntity.ok( posts.getComments());
         }
-
-
 
     }
 

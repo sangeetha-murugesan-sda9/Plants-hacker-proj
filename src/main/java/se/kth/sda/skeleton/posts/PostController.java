@@ -8,10 +8,6 @@ import se.kth.sda.skeleton.ResourceNotFoundException;
 
 import java.util.List;
 
-/*
-    @TODO create the methods needed to implement the API.
-    Don't forget to add necessary annotations.
- */
  @RestController
 public class PostController {
     PostRepository postRepository;
