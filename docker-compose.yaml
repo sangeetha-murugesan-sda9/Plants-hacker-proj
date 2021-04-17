@@ -3,7 +3,7 @@ services:
   database:
     image: postgres:13-alpine
     environment:
-       - POSTGRES_DB=skeleton 
+       - POSTGRES_DB=skeleton
        - POSTGRES_USER=skeleton_user
        - POSTGRES_PASSWORD=skeleton_pass
     ports:
