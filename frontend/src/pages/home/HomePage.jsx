@@ -12,7 +12,14 @@ export default function HomePage() {
           This is how Indian plants Hacker Forum came to be. A one stop farming information platform that offers ease of access to current farming information in a simplified and interactive way through the our discussion forum.
         </p>
         <p>Agriculture plays a vital role in the Indian economy. Over 70 per cent of the rural households depend on agriculture. Agriculture is an important sector of Indian economy as it contributes about 17% to the total GDP and provides employment to over 60% of the population.</p>
-
+<h3>Role of agriculture in Indian economy</h3>
+          <p>
+             1. Share in National Income:
+                  2. Largest Employment Providing Sector:
+                  3. Contribution to Capital formation:
+                  4. Providing Raw Material to industries
+                  5. Market for Industrial Products:
+          </p>
       </div>
     </div>
   );
