@@ -19,8 +19,6 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
-    /*@ManyToOne
-    private User user;*/
 
     @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
     public List<Comment> comments = new ArrayList<>();
@@ -51,11 +49,5 @@ public class Post {
         this.comments = comments;
     }
 
-  /* public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }*/
 }

@@ -1,6 +1,6 @@
 import Api from "./Api";
 
-class CommentApi {
+    class CommentApi {
     getAllComments() {
         return Api.get('/comments');
     }
@@ -21,9 +21,7 @@ class CommentApi {
         return Api.delete('/comments/'+id);
     }
 
-   /* addEmail(email) {
-        return Api.delete('/comments/'+ email);
-    }*/
+
 }
 
 export default new CommentApi();

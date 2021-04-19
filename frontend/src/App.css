@@ -3,7 +3,8 @@ body {
   background-image: url("./pages/images/background1.jpg");
   background-size: cover;
   margin: 0;
-  padding: 0
+  padding: 0;
+
 }
 
 .App {

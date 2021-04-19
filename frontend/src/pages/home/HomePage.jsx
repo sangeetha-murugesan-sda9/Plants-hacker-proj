@@ -2,7 +2,6 @@
 import React from "react";
 import "../css/style.css";
 
-
 export default function HomePage() {
     return (
         <div className="card">
@@ -26,3 +25,4 @@ export default function HomePage() {
         </div>
     );
 }
+
