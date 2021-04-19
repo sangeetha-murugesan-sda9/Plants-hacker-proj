@@ -8,14 +8,11 @@ import Card from "./Card";
 import CommentCard from "../Comments/CommentCard";
 import CommentApi from "../../api/CommentApi";
 
-import AuthApi from "../../api/AuthApi";
-import CommentForm from "../Comments/CommentForm";
-
-
 export default function PostsPage() {
   // Local state
   const [posts, setPosts] = useState([]);
-  const [comment, setComments] = useState([]);
+  const [comments, setComments]=useState([]);
+
 
   // Methods
   async function createPost(postData) {
@@ -23,36 +20,12 @@ export default function PostsPage() {
       const response = await PostsApi.createPost(postData);
       const post = response.data;
       const newPosts = posts.concat(post);
+
       setPosts(newPosts);
     } catch (e) {
       console.error(e);
     }
   }
-
-  async function createComment(postData) {
-    try {
-      const response = await CommentApi.createComment(postData);
-      const comment = response.data;
-      const newComments = posts.concat(comment);
-
-      setComments(newComments);
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-
-  /* async function addEmail(email){
-    try{
-      const responses = await PostsApi.addEmail(email);
-      const email = responses.data;
-      const newPosts = posts.concat(email) ;
-      setPosts(newPosts);
-    }
-    catch (e) {
-      console.error(e);
-    }
-   }*/
 
   async function deletePost(post) {
     try {
@@ -64,6 +37,11 @@ export default function PostsPage() {
       console.error(e);
     }
   }
+
+
+
+
+
 
   useEffect(() => {
     PostsApi.getAllPosts()
@@ -78,16 +56,14 @@ export default function PostsPage() {
   const CardsArray = posts.map((post) => (
     <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
 
-  ));
+  ))
+
+
+
   return (
-      <div className="design">
-        <Form onSubmit={(postData) => createPost(postData)} />
-        <CommentForm onSubmit={(CommentData) => createComment(CommentData)} />
-        {CardsArray}
-      </div>
+    <div>
+      <Form onSubmit={(postData) => createPost(postData)} />
+      {CardsArray}
+    </div>
   );
 }
-
-
-
-

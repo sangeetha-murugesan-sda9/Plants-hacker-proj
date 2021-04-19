@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.kth.sda.skeleton.posts.Post;
+import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
 
@@ -16,12 +17,16 @@ public class Comment {
 
     @Column(nullable = false)
     private String body;
-
+    @Column(nullable = false)
+    private String email;
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
     @JoinColumn(nullable = false)
     private Post posts;
+
+
+
 
 
     public void setId (Long id) {
@@ -50,5 +55,11 @@ public class Comment {
         this.posts = posts;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

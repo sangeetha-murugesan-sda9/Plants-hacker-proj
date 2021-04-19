@@ -1,166 +1,53 @@
-## PlantsHacker
+# SDA starter template
 
-## Introduction
-This application is a Online Discussion Forum built with gradle.
-The global population is increasing rapidly. And we need more
-food and other products to meet up this huge demand. Traditional
-farming can’t feed up these demands and we must have to use modern
-farming methods. Modern farming can also be a great source of
-employment and income. The unemployed people can start agribusiness.
-Thus we can make a strong economy and hunger free world. One of the major challenges we identified while working with farmers in India is an information gap and ease of access to that information.
+This web starter template is based on Spring, PostgreSQL, React, React router and Axios. Check the following links for documentation and guides:
 
-## Getting Started
+- [Spring](https://spring.io/projects/spring-boot)
+- [PostgreSQL](https://www.postgresql.org)
+- [React](https://reactjs.org)
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Axios](https://github.com/axios/axios)
 
-The web application is made up of three parts: database, backend  (Spring)
-and frontend (React).The application can run directly via Gradle. The code for this application uses the Gradle build tool (https://gradle.org.). Instructions for
-installing Gradle are available in the official documentation(https://gradle.org/install)
-which describes several options.
-
-The User have to register and login.
-
-## How to Run the Application
-The application can also be run via terminal with the Gradle.
-
-```
-./gradlew bootRun
-```
-To Stop Running the Application:
-
-```
-Crtl + C
-```
 ## Setup
-We need to configure the following dependencies in `build.gradle`:
+Our development environment for a full-stack web application will consist of three main parts:
 
-```Dependencies:
-plugins {
-	id 'org.springframework.boot' version '2.2.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-	id 'java'
-}
+1. Database (Postgres).
+2. Backend server (Spring).
+3. Frontend development server (React).
 
-group = 'se.kth.sda'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+### Prerequisites
+- `docker` and `docker-compose`.
+- `nodejs`.
 
-configurations {
-	developmentOnly
-	runtimeClasspath {
-		extendsFrom developmentOnly
-	}
-}
-
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	compile group: 'com.auth0', name: 'java-jwt', version: '3.8.3'
-	runtimeOnly 'org.postgresql:postgresql'
-}
-
-```
-
-`src/main/resources/application.properties` should be configured:
-```properties
-spring.jpa.database=POSTGRESQL
-spring.datasource.platform=postgres
-spring.datasource.url=jdbc:postgresql://localhost:5431/skeleton
-spring.datasource.username=skeleton_user
-spring.datasource.password=skeleton_pass
-spring.jpa.show-sql=true
-spring.jpa.generate-ddl=true
-spring.jpa.hibernate.ddl-auto=create
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-```
-## DataBase Setup
-A Dockerized PostgreSQL database:
-
-The docker-compose.yaml is manually created.
-To create docker-compose from the terminal ,we need to use the command
-```touch docker-compose.yaml ```
-
-and docker-compose.yaml should contain the following.
-```docker-compose.yaml
-version: "3"
-services:
-database:
-image: postgres:13-alpine
-environment:
-- POSTGRES_DB=skeleton
-- POSTGRES_USER=skeleton_user
-- POSTGRES_PASSWORD=skeleton_pass
-ports:
-- "5431:5432"
-volumes:
-- db-data:/var/lib/postgresql/data
-
-volumes:
-db-data:
-```
-
-## Docker Commands
-1.Start container
+### Starting the database
+In the root folder, run
 ```
 docker-compose up
 ```
-2.Stop container
+
+### Starting the backend server
+Open the root folder and run
 ```
-docker-compose down
-```
-3.List all Running Containers
-```
-docker ps
-```
-4.Enter the Running Container
-```
-docker-compose exec database /bin/sh
-```
-5.(psql Commands) While inside a postgres container, enter the postgres database.
-```
-psql skeleton skeleton_user
-```
-6.psql Commands (when inside the database)
-Connect to DataBase:
-```bash
-\c
-```
-7.Show the tables in the database
-```bash
-\dt
-```
-8.Show all rows in particular table
-```
-SELECT * FROM account;
+./gradlew bootRun
 ```
 
-## Usage
-After logging in,the User can
-Make a post ,Delete a post ,Update a post and View all posts.The user can also
-Write a comment on a post ,Delete a comment on a post ,View all comments on a post.
+### Starting the frontend development server
+The frontend application is in the directory `frontend`. From there, run 
+```
+npm install
+```
+to install all the dependencies needed for the project.
 
-### Post
-The Users are able to post different (text) posts,Update a post and View all posts.
+Then start the frontend application by running
+```
+npm start
+```
 
-Below are the End-points:
+### Inviting collaborators
+The following should be done by one person in each group.
 
-| HTTP Method | HTTP Path | Action |
-| ------------|-----------|--------|
-| `GET`    |  `/posts`     | return all posts. |
-| `GET`    | `/posts/{id}` | return a specific post based on the provided id. |
-| `POST`   | `/posts`    | create a new post. |
-| `PUT`    | `/posts/{id}` | update the given posts. |
-| `DELETE` | `/posts/{id}` | delete the given article. |
+Now that you have a repo, you can start inviting your group members as collaborators so that they can work
+with you on your repo. Go to `Settings` -> `Manage Access` and then add your group members via their usernames.
 
-### Comment
-
-The Users are able to comment the different posts. They can also Delete a comment on a post ,
-View all comments on a post.
-
-
-
+### Task
+You will find your task in [`Task.md`](Task.md)

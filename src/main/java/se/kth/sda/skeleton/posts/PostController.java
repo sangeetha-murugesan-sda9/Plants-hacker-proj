@@ -5,17 +5,28 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.ResourceNotFoundException;
+import se.kth.sda.skeleton.auth.AuthService;
+import se.kth.sda.skeleton.user.User;
+import se.kth.sda.skeleton.user.UserRepository;
 
+import java.security.Principal;
 import java.util.List;
 
+/*
+    @TODO create the methods needed to implement the API.
+    Don't forget to add necessary annotations.
+ */
  @RestController
 public class PostController {
     PostRepository postRepository;
+    UserRepository userRepository ;
 
-
+    @Autowired
+    private AuthService authService;
 @Autowired
-    public PostController(PostRepository postRepository) {
+    public PostController(PostRepository postRepository,UserRepository userRepository) {
         this.postRepository = postRepository;
+    this.userRepository= userRepository;
     }
 
 
@@ -54,12 +65,15 @@ public class PostController {
 
 
     @PostMapping("/post")
-    public ResponseEntity<Post> createPost(@RequestBody Post post) {
+    public ResponseEntity<Post> createPost(@RequestBody Post post , Principal principal) {
+    String userName = principal.getName();
+ post.setEmail(userName);
 
-        postRepository.save(post);
+
+    postRepository.save(post);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
-
 
 }
 
