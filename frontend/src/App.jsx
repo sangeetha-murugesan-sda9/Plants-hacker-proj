@@ -10,7 +10,7 @@ import HomePage from "./pages/home/HomePage";
 import PostsPage from "./pages/posts/PostsPage";
 import ChatPage from "./pages/chat/ChatPage";
 import "./App.css";
-import CommentForm from "./pages/Comments/CommentForm";
+
 
 export default function App() {
   // State
@@ -26,7 +26,6 @@ export default function App() {
 
       <div className="container mt-5">
         <Switch>
-
           <Route path="/posts">
             <PostsPage />
           </Route>

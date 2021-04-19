@@ -51,15 +51,15 @@ export default function PostCard({ post, onDeleteClick }) {
   return (
     <div className="card mt-3">
       <div className="card-body">
+
         <p>{post.body}</p>
 
           <div>
             <button className="btn btn-danger" onClick={onDeleteClick}>
                 Delete
             </button>
+            {!state &&
 
-
-          {!state &&
 
               <button className="btn btn-info m-3" onClick={showForm}>
                   Comment

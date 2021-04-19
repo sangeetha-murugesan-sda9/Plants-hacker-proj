@@ -1,10 +1,6 @@
 body {
   min-height: 100vh;
-  background-image: url("./pages/images/background1.jpg");
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-
+  background: linear-gradient(to right, #648743, #438740);
 }
 
 .App {
@@ -29,6 +25,3 @@ body {
 .App-link {
   color: #09d3ac;
 }
-
-
-

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function CommentForm({ onSubmit }) {
     const [body, setBody] = React.useState("");
 
@@ -14,7 +13,6 @@ export default function CommentForm({ onSubmit }) {
 
     return (
         <div className="card">
-            <div className="p-3 mb-2 bg-info text-white">
             <div className="card-body">
 
                 <div>
@@ -26,17 +24,23 @@ export default function CommentForm({ onSubmit }) {
                 onChange={(e) => setBody(e.target.value)}
             />
                     </div>
+
                     <div className="form-group">
                         <button className="btn btn-primary ml-0" onClick={handleSubmit}>
                             Comment
                         </button>
                     </div>
 
+
+                </div>
+
+                </div>
+
             </div>
-            </div>
-            </div>
-        </div>
+    
+
 
             );
         }
+
 
