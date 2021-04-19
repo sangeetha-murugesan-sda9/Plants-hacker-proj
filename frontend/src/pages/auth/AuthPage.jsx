@@ -1,6 +1,7 @@
 // NPM Packages
 import React from "react";
 import logo from '../images/plant-hacker-logo.jpg';
+ import "../css/style.css";
 
 
 // Project files
@@ -30,8 +31,7 @@ export default function LoginPage() {
         <div className="row mt-4">
           <div className="col-md-6 " style={{ color: "white" }}>
 
-            <img src={logo} width="300" height="200" alt="me"/>
-            <h1>Plant Hacker</h1>
+            <img className="logo" src={logo} width="300" height="200" alt="me"/>
 
           </div>
 

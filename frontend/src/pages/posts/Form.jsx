@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/style.css";
 
 export default function CommentForm({ onSubmit }) {
   const [body, setBody] = React.useState("");
@@ -12,7 +13,8 @@ export default function CommentForm({ onSubmit }) {
   };
 
   return (
-    <div className="card">
+        <div className="card">
+          <div className="p-3 mb-2 bg-dark text-white">
       <div className="card-body">
         <h4 className="card-title">What's on your mind?</h4>
         <div>
@@ -25,12 +27,15 @@ export default function CommentForm({ onSubmit }) {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-primary" onClick={handleSubmit}>
+            <button className="button" onClick={handleSubmit}>
               Post
             </button>
           </div>
         </div>
       </div>
     </div>
+        </div>
+
+
   );
 }

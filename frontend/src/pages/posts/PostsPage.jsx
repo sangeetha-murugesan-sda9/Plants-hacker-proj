@@ -1,6 +1,7 @@
 // NPM Packages
 import React, { useEffect, useState } from "react";
 
+
 // Project files
 import PostsApi from "../../api/PostsApi";
 import Form from "./Form";
@@ -9,8 +10,6 @@ import CommentCard from "../Comments/CommentCard";
 import CommentForm from "../Comments/CommentForm";
 import CommentApi from "../../api/CommentApi";
 import AuthApi from "../../api/AuthApi";
-
-
 
 export default function PostsPage() {
   // Local state
@@ -78,7 +77,7 @@ export default function PostsPage() {
   ));
 
   return (
-    <div>
+    <div className="design">
        <Form onSubmit={(postData) => createPost(postData)} />
       <CommentForm onSubmit={(CommentData) => createComment(CommentData)} />
       {CardsArray}
