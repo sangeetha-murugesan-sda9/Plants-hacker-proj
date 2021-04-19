@@ -180,6 +180,19 @@ Below are the End-points:
 The Users are able to comment the different posts. They can also Delete a comment on a post ,
 View all comments on a post.
 
+## FrontEnd ScreenShots
+## Login Page
+
+![LoginPage](ScreenShots/LoginPage.png)
+
+## Home Page
+
+![HomePage](ScreenShots/HomePage.png)
+
+## Post Page
+
+![HomePage](ScreenShots/PostPage.png)
+
 ## DataBase ScreenShots
 
 ## Running the Containers,Entering the Postgres DataBase and Connecting to DB to view the DB tables.
