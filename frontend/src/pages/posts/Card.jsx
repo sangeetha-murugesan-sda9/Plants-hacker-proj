@@ -1,4 +1,7 @@
+// NPM Packages
 import React, {useEffect, useState} from "react";
+
+//Project Files
 import CommentForm from "../Comments/CommentForm";
 import CommentApi from "../../api/CommentApi";
 import CommentCard from "../Comments/CommentCard";

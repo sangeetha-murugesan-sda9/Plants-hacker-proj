@@ -6,16 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.ResourceNotFoundException;
 import se.kth.sda.skeleton.auth.AuthService;
-import se.kth.sda.skeleton.user.User;
 import se.kth.sda.skeleton.user.UserRepository;
-
 import java.security.Principal;
 import java.util.List;
 
-/*
-    @TODO create the methods needed to implement the API.
-    Don't forget to add necessary annotations.
- */
  @RestController
 public class PostController {
     PostRepository postRepository;
@@ -36,15 +30,12 @@ public class PostController {
         return ResponseEntity.ok(posts);
     }
 
-
-
     @GetMapping("/posts/{id}")
     public ResponseEntity<Post> getPost(@PathVariable Long id) {
         Post posts = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         System.out.println(posts);
         return ResponseEntity.ok(posts);
     }
-
 
     @PutMapping("/posts/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable Long id, @RequestBody Post updatedPost) {
@@ -54,7 +45,6 @@ public class PostController {
         return ResponseEntity.ok(updatedPost);
     }
 
-
     @DeleteMapping("/posts/{id}")
     public ResponseEntity<Post> deletePost(@PathVariable Long id) {
         Post posts = postRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
@@ -63,16 +53,12 @@ public class PostController {
         return new ResponseEntity<Post>(HttpStatus.OK);
     }
 
-
     @PostMapping("/post")
     public ResponseEntity<Post> createPost(@RequestBody Post post , Principal principal) {
     String userName = principal.getName();
- post.setEmail(userName);
-
-
+    post.setEmail(userName);
     postRepository.save(post);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(post);
+    return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
 
 }

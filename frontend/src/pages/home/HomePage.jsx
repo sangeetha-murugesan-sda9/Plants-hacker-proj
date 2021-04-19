@@ -1,5 +1,7 @@
 // NPM Packages
 import React from "react";
+//Project Files
+import "../css/style.css";
 
 export default function HomePage() {
   return (

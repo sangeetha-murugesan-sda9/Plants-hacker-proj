@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 // Project files
 import PostsApi from "../../api/CommentApi";
 import Form from "./CommentForm";
-import Card from "./CommentCard";
 import CommentCard from "./CommentCard";
 
 

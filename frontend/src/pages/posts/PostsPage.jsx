@@ -1,12 +1,11 @@
 // NPM Packages
 import React, { useEffect, useState } from "react";
+import "../css/style.css";
 
 // Project files
 import PostsApi from "../../api/PostsApi";
 import Form from "./Form";
 import Card from "./Card";
-import CommentCard from "../Comments/CommentCard";
-import CommentApi from "../../api/CommentApi";
 
 export default function PostsPage() {
   // Local state
@@ -44,17 +43,11 @@ export default function PostsPage() {
         .catch((err) => console.error(err));
   }, [setPosts]);
 
-
-
-
   // Components
   const CardsArray = posts.map((post) => (
       <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
 
   ))
-
-
-
 
   return (
       <div>

@@ -7,14 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import se.kth.sda.skeleton.ResourceNotFoundException;
 import se.kth.sda.skeleton.posts.Post;
 import se.kth.sda.skeleton.posts.PostRepository;
-import se.kth.sda.skeleton.user.User;
 import se.kth.sda.skeleton.user.UserRepository;
-
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
+
 
 @RestController
 public class CommentController {
@@ -31,6 +28,7 @@ public class CommentController {
             this.postRepository = postRepository;
             this.userRepository = userRepository;
         }
+
 
     @PostMapping("/posts/{postsId}/comments")
     public ResponseEntity<Comment> createComment(@PathVariable Long postsId, @RequestBody Comment comments, Principal principal){

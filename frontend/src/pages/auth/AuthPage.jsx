@@ -29,12 +29,8 @@ export default function LoginPage() {
       <div className="container">
         <div className="row mt-4">
           <div className="col-md-6 " style={{ color: "white" }}>
-
             <img className="logo" src={logo} width="150" height="150" alt="me"/>
-
-
           </div>
-
           <div className="col-md-6">
             <div className="row">
               <div className="col-12  strong-shadow">
