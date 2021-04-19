@@ -18,6 +18,24 @@ which describes several options.
 
 The User have to register and login.
 
+## Front-end React
+Front-end for this application is built with Create React App.
+
+```sh
+npx create-react-app my-app
+cd my-app
+npm install
+npm start
+
+```
+
+_If you've previously installed `create-react-app` globally via `npm install -g create-react-app`, its recommended to uninstall the package using `npm uninstall -g create-react-app` or `yarn global remove create-react-app` to ensure that npx always uses the latest version._
+
+_[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher._
+
+_Then open [http://localhost:3000/](http://localhost:3000/) to see the application.<br>_
+
+
 ## How to Run the Application
 The application can also be run via terminal with the Gradle.
 
@@ -161,6 +179,17 @@ Below are the End-points:
 
 The Users are able to comment the different posts. They can also Delete a comment on a post ,
 View all comments on a post.
+
+## DataBase ScreenShots
+
+## Running the Containers,Entering the Postgres DataBase and Connecting to DB to view the DB tables.
+
+![DB1](ScreenShots/DataBase1.png)
+
+## To view all the rows in the particular table (account,post,comment)
+
+![DB2](ScreenShots/DataBase2.png)
+
 
 
 
