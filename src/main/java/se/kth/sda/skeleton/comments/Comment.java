@@ -16,8 +16,8 @@ public class Comment {
 
     @Column(nullable = false)
     private String body;
-    @Column(nullable = false)
-    private String email;
+    /*@Column(nullable = false)
+    private String email;*/
 
     @ManyToOne
     @JsonIdentityReference(alwaysAsId = true)
@@ -53,11 +53,11 @@ public class Comment {
         this.posts = posts;
     }
 
-    public String getEmail() {
+    /*public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }

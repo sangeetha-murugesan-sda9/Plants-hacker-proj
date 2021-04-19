@@ -31,34 +31,21 @@ public class CommentController {
             this.userRepository = userRepository;
         }
 
-        @PostMapping(value = "/posts/{postsId}/comments", consumes = "application/json")
-        public ResponseEntity<Comment> createComment(@PathVariable Long postsId, @RequestBody Comment comments){
-            Post posts = postRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            User user = userRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            String emailID = (String)((Map)comments).get("email");
+    @PostMapping("/posts/{postsId}/comments")
+    public ResponseEntity<Comment> createComment(@PathVariable Long postsId, @RequestBody Comment comments){
+        Post posts = postRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
 
-            Logger logger = Logger.getLogger(CommentController.class.getName());
+        comments.setPosts(posts);
 
-            logger.info("DEDEDED" + emailID);
-
-            comments.setEmail(emailID);
-            comments.setPosts(posts);
-
-            user.setEmail(emailID);
-
-            commentsRepository.save(comments);
-
-            userRepository.save(user);
-
-            //commentBysEmailID.put(postsId, comments.getEmail());
-            return ResponseEntity.status(HttpStatus.CREATED).body(comments);
-        }
+        commentsRepository.save(comments);
+        return ResponseEntity.status(HttpStatus.CREATED).body(comments);
+    }
 
         @DeleteMapping("/comments/{id}")
         public ResponseEntity<Comment> deleteComment(@PathVariable Long id){
             Comment comments = commentsRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-            User user = userRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-
+            //User user = userRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+/*
             //for(Map.Entry<Long, String> entry : commentBysEmailID.entrySet())
             {
                 //if(entry.getKey() == id)
@@ -66,9 +53,9 @@ public class CommentController {
                     if(user.getEmail() == comments.getEmail())
                         commentsRepository.delete(comments);
                 }
-            }
+            }*/
 
-           // commentsRepository.delete(comments);
+            commentsRepository.delete(comments);
             return  ResponseEntity.ok(comments);
         }
 

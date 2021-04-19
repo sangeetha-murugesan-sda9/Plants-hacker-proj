@@ -6,15 +6,13 @@ import PostsApi from "../../api/PostsApi";
 import Form from "./Form";
 import Card from "./Card";
 import CommentCard from "../Comments/CommentCard";
-import CommentForm from "../Comments/CommentForm";
 import CommentApi from "../../api/CommentApi";
-
-
 
 export default function PostsPage() {
   // Local state
   const [posts, setPosts] = useState([]);
-  const [comment, setComments] = useState([]);
+  const [comments, setComments]=useState([]);
+
 
   // Methods
   async function createPost(postData) {
@@ -40,17 +38,10 @@ export default function PostsPage() {
     }
   }
 
-  async function createComment(postData) {
-    try {
-      const response = await CommentApi.createComment(postData);
-      const comment = response.data;
-      const newComments = posts.concat(comment);
 
-      setComments(newComments);
-    } catch (e) {
-      console.error(e);
-    }
-  }
+
+
+
 
   useEffect(() => {
     PostsApi.getAllPosts()
@@ -59,15 +50,19 @@ export default function PostsPage() {
   }, [setPosts]);
 
 
+
+
   // Components
   const CardsArray = posts.map((post) => (
     <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
-  ));
+
+  ))
+
+
 
   return (
     <div>
       <Form onSubmit={(postData) => createPost(postData)} />
-      <CommentForm onSubmit={(CommentData) => createComment(CommentData)} />
       {CardsArray}
     </div>
   );

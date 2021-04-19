@@ -17,8 +17,8 @@ public class Post {
 
     @Column(nullable = false)
     private String body;
-    @Column(nullable = false)
-    private String email;
+    /*@Column(nullable = false)
+    private String email;*/
 
     @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
     public List<Comment> comments = new ArrayList<>();
@@ -49,11 +49,11 @@ public class Post {
         this.comments = comments;
     }
 
-    public String getEmail() {
+    /*public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }
