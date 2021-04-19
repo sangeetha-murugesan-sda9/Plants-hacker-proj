@@ -13,8 +13,8 @@ export default function CommentForm({ onSubmit }) {
 
     return (
         <div className="card">
+            <div className="p-3 mb-2 bg-info text-white">
             <div className="card-body">
-
                 <div>
                     <div className="form-group">
             <textarea
@@ -37,6 +37,7 @@ export default function CommentForm({ onSubmit }) {
                 </div>
 
             </div>
+        </div>
     
 
 

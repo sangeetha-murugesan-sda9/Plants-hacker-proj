@@ -1,13 +1,7 @@
 // NPM Packages
 import React from "react";
-
-import logo from '../images/plant-hacker-logo.jpg';
-
 import logo from '../images/new logo.png';
 import "../css/style.css";
-
-
-
 
 // Project files
 import LoginForm from "./LoginForm";
@@ -36,10 +30,6 @@ export default function LoginPage() {
         <div className="row mt-4">
           <div className="col-md-6 " style={{ color: "white" }}>
 
-
-            <img src={logo} width="300" height="200" alt="me"/>
-            <h1>Plant Hacker</h1>
-
             <img className="logo" src={logo} width="150" height="150" alt="me"/>
 
 
@@ -50,7 +40,6 @@ export default function LoginPage() {
               <div className="col-12  strong-shadow">
                 <LoginForm onSubmit={login} />
               </div>
-
               <div className="col-12 mt-4">
                 <RegisterForm onSubmit={register} />
               </div>

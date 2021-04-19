@@ -14,11 +14,11 @@ export default function HomePage() {
         <p>Agriculture plays a vital role in the Indian economy. Over 70 per cent of the rural households depend on agriculture. Agriculture is an important sector of Indian economy as it contributes about 17% to the total GDP and provides employment to over 60% of the population.</p>
 <h3>Role of agriculture in Indian economy</h3>
           <p>
-             1. Share in National Income:
-                  2. Largest Employment Providing Sector:
-                  3. Contribution to Capital formation:
-                  4. Providing Raw Material to industries
-                  5. Market for Industrial Products:
+             1. Share in National Income <br/>
+                  2. Largest Employment Providing Sector <br/>
+                  3. Contribution to Capital formation <br/>
+                  4. Providing Raw Material to industries <br/>
+                  5. Market for Industrial Products<br/>
           </p>
       </div>
     </div>
