@@ -26,10 +26,17 @@ export default function CommentForm({ onSubmit }) {
                 onChange={(e) => setBody(e.target.value)}
             />
                     </div>
-                </div>
+                    <div className="form-group">
+                        <button className="btn btn-primary ml-0" onClick={handleSubmit}>
+                            Comment
+                        </button>
+                    </div>
+
+            </div>
             </div>
             </div>
         </div>
+
             );
         }
 

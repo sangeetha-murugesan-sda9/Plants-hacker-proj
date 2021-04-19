@@ -1,4 +1,3 @@
-import  "../css/style.css";
 import React, {useEffect, useState} from "react";
 import CommentForm from "../Comments/CommentForm";
 import CommentApi from "../../api/CommentApi";
@@ -50,31 +49,28 @@ export default function PostCard({ post, onDeleteClick }) {
     ))
 
   return (
-
     <div className="card mt-3">
-        <div className="p-3 mb-2 bg-dark text-white">
-      <div className="card-body" >
+      <div className="card-body">
         <p>{post.body}</p>
+
+          <div>
+            <button className="btn btn-danger" onClick={onDeleteClick}>
+                Delete
+            </button>
 
 
           {!state &&
-          <div>
-              <button className="button" onClick={onDeleteClick}>
-                  Delete
-              </button>
 
-             ¨
-             <button className="button" onClick={showForm}>
+              <button className="btn btn-info m-3" onClick={showForm}>
                   Comment
               </button>
-          </div>
+
            }
+           </div>
           {state &&  <CommentForm onSubmit={(commentData) => createComment(commentData,post.id)}/>}
           {CommentsCardArray}
 
       </div>
     </div>
-    </div>
-
   );
 }
