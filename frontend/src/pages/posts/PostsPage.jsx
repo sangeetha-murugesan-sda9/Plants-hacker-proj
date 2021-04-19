@@ -5,11 +5,14 @@ import React, { useEffect, useState } from "react";
 import PostsApi from "../../api/PostsApi";
 import Form from "./Form";
 import Card from "./Card";
-
+import CommentCard from "../Comments/CommentCard";
+import CommentApi from "../../api/CommentApi";
 
 export default function PostsPage() {
   // Local state
   const [posts, setPosts] = useState([]);
+  const [comments, setComments]=useState([]);
+
 
   // Methods
   async function createPost(postData) {
@@ -35,6 +38,11 @@ export default function PostsPage() {
     }
   }
 
+
+
+
+
+
   useEffect(() => {
     PostsApi.getAllPosts()
       .then(({ data }) => setPosts(data))
@@ -42,15 +50,19 @@ export default function PostsPage() {
   }, [setPosts]);
 
 
+
+
   // Components
   const CardsArray = posts.map((post) => (
     <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
-  ));
+
+  ))
+
+
 
   return (
     <div>
       <Form onSubmit={(postData) => createPost(postData)} />
-
       {CardsArray}
     </div>
   );

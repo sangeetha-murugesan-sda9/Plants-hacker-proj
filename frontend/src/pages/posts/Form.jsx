@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PostForm({ onSubmit }) {
+export default function CommentForm({ onSubmit }) {
   const [body, setBody] = React.useState("");
 
   const handleSubmit = () => {
