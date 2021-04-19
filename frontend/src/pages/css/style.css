@@ -1,7 +1,6 @@
 /* -----import FONT------- */
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700&display=swap");
 @import "./AuthPage.css";
-
 /* -----Variables CSS------- */
 :root {
     --header-height: 3rem;

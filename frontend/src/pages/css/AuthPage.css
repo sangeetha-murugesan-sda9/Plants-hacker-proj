@@ -10,12 +10,11 @@
     margin-left:auto;
     margin-right: auto;
 }
-.logo {
-    border-radius: 50%;
-    border: solid 4px #224e22;
-    display: block;
-    margin-left:auto;
-    margin-right: auto;
+.logo {object-fit: cover;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 6px 0 0 20px;
+    align-items: center;
 }
 @media only screen and (min-width: 750px) {
 {
