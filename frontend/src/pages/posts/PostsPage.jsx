@@ -45,8 +45,8 @@ export default function PostsPage() {
 
   useEffect(() => {
     PostsApi.getAllPosts()
-      .then(({ data }) => setPosts(data))
-      .catch((err) => console.error(err));
+        .then(({ data }) => setPosts(data))
+        .catch((err) => console.error(err));
   }, [setPosts]);
 
 
@@ -54,16 +54,18 @@ export default function PostsPage() {
 
   // Components
   const CardsArray = posts.map((post) => (
-    <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
+      <Card key={post.id} post={post} onDeleteClick={() => deletePost(post)} />
 
   ))
 
 
 
+
   return (
-    <div>
-      <Form onSubmit={(postData) => createPost(postData)} />
-      {CardsArray}
-    </div>
-  );
+      <div>
+        <Form onSubmit={(postData) => createPost(postData)} />
+        {CardsArray}
+      </div>
+
+ );
 }

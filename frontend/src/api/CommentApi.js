@@ -2,12 +2,6 @@ import Api from "./Api";
 
 class CommentApi {
 
-    getAllComments() {
-        return Api.get('/comments');
-    }
-
-
-
     getCommentsById(comments,id) {
         return Api.get('/posts/'+id+'/comments',comments);
     }
@@ -19,11 +13,6 @@ class CommentApi {
     deleteComment(id) {
         return Api.delete('/comments/'+id);
     }
-
-
-   /* addEmail(email) {
-        return Api.delete('/comments/'+ email);
-    }*/
 
 }
 

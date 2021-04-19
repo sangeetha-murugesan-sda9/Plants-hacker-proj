@@ -30,8 +30,17 @@ export default function CommentForm({ onSubmit }) {
                             Comment
                         </button>
                     </div>
+
+
                 </div>
+
+                </div>
+
             </div>
-        </div>
-    );
-}
+    
+
+
+            );
+        }
+
+

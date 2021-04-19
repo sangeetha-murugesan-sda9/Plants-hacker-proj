@@ -51,18 +51,22 @@ export default function PostCard({ post, onDeleteClick }) {
   return (
     <div className="card mt-3">
       <div className="card-body">
-        <p>{post.email}</p>
-          <p>{post.body}</p>
-          {!state &&
+
+        <p>{post.body}</p>
+
           <div>
-              <button className="btn btn-danger" onClick={onDeleteClick}>
-                  Delete
-              </button>
+            <button className="btn btn-danger" onClick={onDeleteClick}>
+                Delete
+            </button>
+            {!state &&
+
+
               <button className="btn btn-info m-3" onClick={showForm}>
                   Comment
               </button>
-          </div>
+
            }
+           </div>
           {state &&  <CommentForm onSubmit={(commentData) => createComment(commentData,post.id)}/>}
           {CommentsCardArray}
 
